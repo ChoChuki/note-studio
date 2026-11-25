@@ -1,0 +1,479 @@
+{
+  "packVersion": "iowa-prototype-1",
+  "status": "prototype-automated-qc",
+  "samples": 72,
+  "midiRange": [
+    60,
+    95
+  ],
+  "fileBytes": 1086480,
+  "durationSeconds": 1.2,
+  "independentTakeCountPerInstrumentPitch": 1,
+  "automatedPitchIdentificationFailures": [],
+  "humanListeningReviewComplete": false,
+  "secondIndependentTakesComplete": false,
+  "instruments": {
+    "violin": {
+      "count": 36,
+      "maximumAbsoluteMedianResidualCents": 0.84,
+      "maximumWithinNoteP95P05SpreadCents": 33.34,
+      "tuningCorrectionRangeCents": [
+        -34.69,
+        26.14
+      ],
+      "decodedRmsRangeDbfs": [
+        -26.45,
+        -26.44
+      ],
+      "maximumDecodedPeakDbfs": -11.95
+    },
+    "piano": {
+      "count": 36,
+      "maximumAbsoluteMedianResidualCents": 1.36,
+      "maximumWithinNoteP95P05SpreadCents": 11.24,
+      "tuningCorrectionRangeCents": [
+        -24.66,
+        -4.12
+      ],
+      "decodedRmsRangeDbfs": [
+        -26.49,
+        -26.41
+      ],
+      "maximumDecodedPeakDbfs": -3.08
+    }
+  },
+  "independentYinCheck": [
+    {
+      "id": "violin-60-1",
+      "expectedMidi": 60,
+      "measuredMidi": 60.01,
+      "matches": true
+    },
+    {
+      "id": "piano-60-1",
+      "expectedMidi": 60,
+      "measuredMidi": 60.025,
+      "matches": true
+    },
+    {
+      "id": "violin-61-1",
+      "expectedMidi": 61,
+      "measuredMidi": 61.04,
+      "matches": true
+    },
+    {
+      "id": "piano-61-1",
+      "expectedMidi": 61,
+      "measuredMidi": 61.007,
+      "matches": true
+    },
+    {
+      "id": "violin-62-1",
+      "expectedMidi": 62,
+      "measuredMidi": 62.0,
+      "matches": true
+    },
+    {
+      "id": "piano-62-1",
+      "expectedMidi": 62,
+      "measuredMidi": 62.02,
+      "matches": true
+    },
+    {
+      "id": "violin-63-1",
+      "expectedMidi": 63,
+      "measuredMidi": 62.999,
+      "matches": true
+    },
+    {
+      "id": "piano-63-1",
+      "expectedMidi": 63,
+      "measuredMidi": 63.02,
+      "matches": true
+    },
+    {
+      "id": "violin-64-1",
+      "expectedMidi": 64,
+      "measuredMidi": 63.991,
+      "matches": true
+    },
+    {
+      "id": "piano-64-1",
+      "expectedMidi": 64,
+      "measuredMidi": 64.022,
+      "matches": true
+    },
+    {
+      "id": "violin-65-1",
+      "expectedMidi": 65,
+      "measuredMidi": 64.987,
+      "matches": true
+    },
+    {
+      "id": "piano-65-1",
+      "expectedMidi": 65,
+      "measuredMidi": 65.016,
+      "matches": true
+    },
+    {
+      "id": "violin-66-1",
+      "expectedMidi": 66,
+      "measuredMidi": 66.043,
+      "matches": true
+    },
+    {
+      "id": "piano-66-1",
+      "expectedMidi": 66,
+      "measuredMidi": 66.025,
+      "matches": true
+    },
+    {
+      "id": "violin-67-1",
+      "expectedMidi": 67,
+      "measuredMidi": 67.021,
+      "matches": true
+    },
+    {
+      "id": "piano-67-1",
+      "expectedMidi": 67,
+      "measuredMidi": 67.015,
+      "matches": true
+    },
+    {
+      "id": "violin-68-1",
+      "expectedMidi": 68,
+      "measuredMidi": 68.021,
+      "matches": true
+    },
+    {
+      "id": "piano-68-1",
+      "expectedMidi": 68,
+      "measuredMidi": 68.005,
+      "matches": true
+    },
+    {
+      "id": "violin-69-1",
+      "expectedMidi": 69,
+      "measuredMidi": 68.988,
+      "matches": true
+    },
+    {
+      "id": "piano-69-1",
+      "expectedMidi": 69,
+      "measuredMidi": 69.002,
+      "matches": true
+    },
+    {
+      "id": "violin-70-1",
+      "expectedMidi": 70,
+      "measuredMidi": 69.982,
+      "matches": true
+    },
+    {
+      "id": "piano-70-1",
+      "expectedMidi": 70,
+      "measuredMidi": 70.033,
+      "matches": true
+    },
+    {
+      "id": "violin-71-1",
+      "expectedMidi": 71,
+      "measuredMidi": 70.961,
+      "matches": true
+    },
+    {
+      "id": "piano-71-1",
+      "expectedMidi": 71,
+      "measuredMidi": 71.023,
+      "matches": true
+    },
+    {
+      "id": "violin-72-1",
+      "expectedMidi": 72,
+      "measuredMidi": 72.004,
+      "matches": true
+    },
+    {
+      "id": "piano-72-1",
+      "expectedMidi": 72,
+      "measuredMidi": 71.993,
+      "matches": true
+    },
+    {
+      "id": "violin-73-1",
+      "expectedMidi": 73,
+      "measuredMidi": 72.975,
+      "matches": true
+    },
+    {
+      "id": "piano-73-1",
+      "expectedMidi": 73,
+      "measuredMidi": 72.989,
+      "matches": true
+    },
+    {
+      "id": "violin-74-1",
+      "expectedMidi": 74,
+      "measuredMidi": 73.996,
+      "matches": true
+    },
+    {
+      "id": "piano-74-1",
+      "expectedMidi": 74,
+      "measuredMidi": 74.001,
+      "matches": true
+    },
+    {
+      "id": "violin-75-1",
+      "expectedMidi": 75,
+      "measuredMidi": 74.953,
+      "matches": true
+    },
+    {
+      "id": "piano-75-1",
+      "expectedMidi": 75,
+      "measuredMidi": 74.991,
+      "matches": true
+    },
+    {
+      "id": "violin-76-1",
+      "expectedMidi": 76,
+      "measuredMidi": 75.985,
+      "matches": true
+    },
+    {
+      "id": "piano-76-1",
+      "expectedMidi": 76,
+      "measuredMidi": 76.006,
+      "matches": true
+    },
+    {
+      "id": "violin-77-1",
+      "expectedMidi": 77,
+      "measuredMidi": 77.004,
+      "matches": true
+    },
+    {
+      "id": "piano-77-1",
+      "expectedMidi": 77,
+      "measuredMidi": 77.018,
+      "matches": true
+    },
+    {
+      "id": "violin-78-1",
+      "expectedMidi": 78,
+      "measuredMidi": 78.02,
+      "matches": true
+    },
+    {
+      "id": "piano-78-1",
+      "expectedMidi": 78,
+      "measuredMidi": 78.0,
+      "matches": true
+    },
+    {
+      "id": "violin-79-1",
+      "expectedMidi": 79,
+      "measuredMidi": 79.018,
+      "matches": true
+    },
+    {
+      "id": "piano-79-1",
+      "expectedMidi": 79,
+      "measuredMidi": 78.992,
+      "matches": true
+    },
+    {
+      "id": "violin-80-1",
+      "expectedMidi": 80,
+      "measuredMidi": 79.997,
+      "matches": true
+    },
+    {
+      "id": "piano-80-1",
+      "expectedMidi": 80,
+      "measuredMidi": 79.991,
+      "matches": true
+    },
+    {
+      "id": "violin-81-1",
+      "expectedMidi": 81,
+      "measuredMidi": 81.03,
+      "matches": true
+    },
+    {
+      "id": "piano-81-1",
+      "expectedMidi": 81,
+      "measuredMidi": 80.989,
+      "matches": true
+    },
+    {
+      "id": "violin-82-1",
+      "expectedMidi": 82,
+      "measuredMidi": 81.977,
+      "matches": true
+    },
+    {
+      "id": "piano-82-1",
+      "expectedMidi": 82,
+      "measuredMidi": 82.007,
+      "matches": true
+    },
+    {
+      "id": "violin-83-1",
+      "expectedMidi": 83,
+      "measuredMidi": 83.06,
+      "matches": true
+    },
+    {
+      "id": "piano-83-1",
+      "expectedMidi": 83,
+      "measuredMidi": 83.014,
+      "matches": true
+    },
+    {
+      "id": "violin-84-1",
+      "expectedMidi": 84,
+      "measuredMidi": 84.007,
+      "matches": true
+    },
+    {
+      "id": "piano-84-1",
+      "expectedMidi": 84,
+      "measuredMidi": 84.002,
+      "matches": true
+    },
+    {
+      "id": "violin-85-1",
+      "expectedMidi": 85,
+      "measuredMidi": 85.003,
+      "matches": true
+    },
+    {
+      "id": "piano-85-1",
+      "expectedMidi": 85,
+      "measuredMidi": 84.999,
+      "matches": true
+    },
+    {
+      "id": "violin-86-1",
+      "expectedMidi": 86,
+      "measuredMidi": 86.043,
+      "matches": true
+    },
+    {
+      "id": "piano-86-1",
+      "expectedMidi": 86,
+      "measuredMidi": 86.006,
+      "matches": true
+    },
+    {
+      "id": "violin-87-1",
+      "expectedMidi": 87,
+      "measuredMidi": 86.94,
+      "matches": true
+    },
+    {
+      "id": "piano-87-1",
+      "expectedMidi": 87,
+      "measuredMidi": 87.012,
+      "matches": true
+    },
+    {
+      "id": "violin-88-1",
+      "expectedMidi": 88,
+      "measuredMidi": 88.005,
+      "matches": true
+    },
+    {
+      "id": "piano-88-1",
+      "expectedMidi": 88,
+      "measuredMidi": 88.001,
+      "matches": true
+    },
+    {
+      "id": "violin-89-1",
+      "expectedMidi": 89,
+      "measuredMidi": 89.028,
+      "matches": true
+    },
+    {
+      "id": "piano-89-1",
+      "expectedMidi": 89,
+      "measuredMidi": 88.999,
+      "matches": true
+    },
+    {
+      "id": "violin-90-1",
+      "expectedMidi": 90,
+      "measuredMidi": 90.016,
+      "matches": true
+    },
+    {
+      "id": "piano-90-1",
+      "expectedMidi": 90,
+      "measuredMidi": 90.01,
+      "matches": true
+    },
+    {
+      "id": "violin-91-1",
+      "expectedMidi": 91,
+      "measuredMidi": 91.017,
+      "matches": true
+    },
+    {
+      "id": "piano-91-1",
+      "expectedMidi": 91,
+      "measuredMidi": 91.009,
+      "matches": true
+    },
+    {
+      "id": "violin-92-1",
+      "expectedMidi": 92,
+      "measuredMidi": 92.027,
+      "matches": true
+    },
+    {
+      "id": "piano-92-1",
+      "expectedMidi": 92,
+      "measuredMidi": 91.999,
+      "matches": true
+    },
+    {
+      "id": "violin-93-1",
+      "expectedMidi": 93,
+      "measuredMidi": 93.011,
+      "matches": true
+    },
+    {
+      "id": "piano-93-1",
+      "expectedMidi": 93,
+      "measuredMidi": 93.003,
+      "matches": true
+    },
+    {
+      "id": "violin-94-1",
+      "expectedMidi": 94,
+      "measuredMidi": 93.997,
+      "matches": true
+    },
+    {
+      "id": "piano-94-1",
+      "expectedMidi": 94,
+      "measuredMidi": 93.978,
+      "matches": true
+    },
+    {
+      "id": "violin-95-1",
+      "expectedMidi": 95,
+      "measuredMidi": 95.012,
+      "matches": true
+    },
+    {
+      "id": "piano-95-1",
+      "expectedMidi": 95,
+      "measuredMidi": 94.991,
+      "matches": true
+    }
+  ]
+}

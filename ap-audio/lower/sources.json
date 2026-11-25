@@ -1,0 +1,209 @@
+{
+  "source": "Word_AP_Parasite_v1_6_13_80E7A889E780_83E7B2.zip",
+  "description": "Existing JCLive acoustic-instrument sample WAVs, unchanged, not independent recordings for every note. No oscillator synthesis.",
+  "samples": [
+    {
+      "instrument": "piano",
+      "midi": 36,
+      "file": "ap-audio/lower/piano/36.wav",
+      "originalPath": "audio/piano/36.wav",
+      "sha256": "0e2a8a8e4aa25132db05d948cdc0c7b26ba8bdf0b77cd4ff6dc153541b341d61"
+    },
+    {
+      "instrument": "piano",
+      "midi": 37,
+      "file": "ap-audio/lower/piano/37.wav",
+      "originalPath": "audio/piano/37.wav",
+      "sha256": "6c251bb7b1a78f603dcb7184d496a22cb13a72eb43ea9090d41bb160bc26d4ad"
+    },
+    {
+      "instrument": "piano",
+      "midi": 38,
+      "file": "ap-audio/lower/piano/38.wav",
+      "originalPath": "audio/piano/38.wav",
+      "sha256": "029abfccfe90929a65952a5ce38f121adb68421aefab7e958dfd48201863d681"
+    },
+    {
+      "instrument": "piano",
+      "midi": 39,
+      "file": "ap-audio/lower/piano/39.wav",
+      "originalPath": "audio/piano/39.wav",
+      "sha256": "4ee397cddf7afe066389348597e87e5fd8567f8911fd9da6a3eff3de997d6760"
+    },
+    {
+      "instrument": "piano",
+      "midi": 40,
+      "file": "ap-audio/lower/piano/40.wav",
+      "originalPath": "audio/piano/40.wav",
+      "sha256": "e027368aeeedd620d13f9a1e574af7445139c02913c453a6d9b50a18b1675b1c"
+    },
+    {
+      "instrument": "piano",
+      "midi": 41,
+      "file": "ap-audio/lower/piano/41.wav",
+      "originalPath": "audio/piano/41.wav",
+      "sha256": "6c536e372d182ae8a15fd3c9b344df738102eb4dada35b506ed7c3bfc3f1bc27"
+    },
+    {
+      "instrument": "piano",
+      "midi": 42,
+      "file": "ap-audio/lower/piano/42.wav",
+      "originalPath": "audio/piano/42.wav",
+      "sha256": "dbecd7ad51e578de807c6ec22c7162744a8fbd1487c746d998cddcb1729d291a"
+    },
+    {
+      "instrument": "piano",
+      "midi": 43,
+      "file": "ap-audio/lower/piano/43.wav",
+      "originalPath": "audio/piano/43.wav",
+      "sha256": "35436c19ec587d597492852cf39beb0f5b9b1c7acef3667e0e97bd69d7a5c7a5"
+    },
+    {
+      "instrument": "piano",
+      "midi": 44,
+      "file": "ap-audio/lower/piano/44.wav",
+      "originalPath": "audio/piano/44.wav",
+      "sha256": "2d800ea3b6028249dd5259314931e0945d42504405720647173bb920ef829355"
+    },
+    {
+      "instrument": "piano",
+      "midi": 45,
+      "file": "ap-audio/lower/piano/45.wav",
+      "originalPath": "audio/piano/45.wav",
+      "sha256": "e53bdd52f7278656e1dca6ee796d18598b76cedd0c43b035a6e7188290ba2553"
+    },
+    {
+      "instrument": "piano",
+      "midi": 46,
+      "file": "ap-audio/lower/piano/46.wav",
+      "originalPath": "audio/piano/46.wav",
+      "sha256": "276e205ec238759c443994f7577462734e3ffc523fb4fde0a1287f191541ee01"
+    },
+    {
+      "instrument": "piano",
+      "midi": 47,
+      "file": "ap-audio/lower/piano/47.wav",
+      "originalPath": "audio/piano/47.wav",
+      "sha256": "8129d0cac641c42f049c7ee7bc44eba3cf53528afd1255141ec044c421de8578"
+    },
+    {
+      "instrument": "piano",
+      "midi": 48,
+      "file": "ap-audio/lower/piano/48.wav",
+      "originalPath": "audio/piano/48.wav",
+      "sha256": "62dc3ef27fb62c8b682e754d3c5e068b98a2840e7ed5dd87bb8f92514479a6bb"
+    },
+    {
+      "instrument": "piano",
+      "midi": 49,
+      "file": "ap-audio/lower/piano/49.wav",
+      "originalPath": "audio/piano/49.wav",
+      "sha256": "267be77dad8073510d2b48895154a9ce87be645421573f2e652619f0b485a15b"
+    },
+    {
+      "instrument": "piano",
+      "midi": 50,
+      "file": "ap-audio/lower/piano/50.wav",
+      "originalPath": "audio/piano/50.wav",
+      "sha256": "a742292048c9ec77c227ab50649bbcd4ce99a6dd900264d26f3ff5fa77fdc84e"
+    },
+    {
+      "instrument": "piano",
+      "midi": 51,
+      "file": "ap-audio/lower/piano/51.wav",
+      "originalPath": "audio/piano/51.wav",
+      "sha256": "7b335a6ae6ea70130bf2e40014da3abecd17f8eebe5c3a0fb17449a27c01a498"
+    },
+    {
+      "instrument": "piano",
+      "midi": 52,
+      "file": "ap-audio/lower/piano/52.wav",
+      "originalPath": "audio/piano/52.wav",
+      "sha256": "8a99cb73bd8689184c95809046ac180c3289c216b48f533d68549338b742be45"
+    },
+    {
+      "instrument": "piano",
+      "midi": 53,
+      "file": "ap-audio/lower/piano/53.wav",
+      "originalPath": "audio/piano/53.wav",
+      "sha256": "27c5f7442e2a851ff1b3f002e18998a7881c14ff8a91ca31dd8dfa9dce23c88e"
+    },
+    {
+      "instrument": "piano",
+      "midi": 54,
+      "file": "ap-audio/lower/piano/54.wav",
+      "originalPath": "audio/piano/54.wav",
+      "sha256": "34cad3c39abbbc338403101ba757a4c6dce40d209240f8022e4bed765d6b8b2e"
+    },
+    {
+      "instrument": "piano",
+      "midi": 55,
+      "file": "ap-audio/lower/piano/55.wav",
+      "originalPath": "audio/piano/55.wav",
+      "sha256": "33e945d00669ec5c057ef71d6db0b4a0f781e16c67866d71fdcd9dbcbec25bb1"
+    },
+    {
+      "instrument": "piano",
+      "midi": 56,
+      "file": "ap-audio/lower/piano/56.wav",
+      "originalPath": "audio/piano/56.wav",
+      "sha256": "7013ae0c8dfdf84538e473faefc1a073ebff50a305891d363aad550e70857eea"
+    },
+    {
+      "instrument": "piano",
+      "midi": 57,
+      "file": "ap-audio/lower/piano/57.wav",
+      "originalPath": "audio/piano/57.wav",
+      "sha256": "0f39d451c69af9981be8ba371191cee8f41d24b1032aa49e667136f6640b2751"
+    },
+    {
+      "instrument": "piano",
+      "midi": 58,
+      "file": "ap-audio/lower/piano/58.wav",
+      "originalPath": "audio/piano/58.wav",
+      "sha256": "99795df35acd77dc2f97e03931b1b043fc4c44d322b5f9e88d797dc9b44825df"
+    },
+    {
+      "instrument": "piano",
+      "midi": 59,
+      "file": "ap-audio/lower/piano/59.wav",
+      "originalPath": "audio/piano/59.wav",
+      "sha256": "a20128ff8a08e3c1bc0fc48ffdb8167ffd40aec56dd699339107e0934c4be7cf"
+    },
+    {
+      "instrument": "violin",
+      "midi": 55,
+      "file": "ap-audio/lower/violin/55.wav",
+      "originalPath": "audio/violin/55.wav",
+      "sha256": "f7310cf9c18c92fc498a41768e1231d321cb947830c4ce3c74ec66825d683ab9"
+    },
+    {
+      "instrument": "violin",
+      "midi": 56,
+      "file": "ap-audio/lower/violin/56.wav",
+      "originalPath": "audio/violin/56.wav",
+      "sha256": "b0a9d4b2e64849b5fc1299558ae4133d866c928203585491dcacd0f1058f8714"
+    },
+    {
+      "instrument": "violin",
+      "midi": 57,
+      "file": "ap-audio/lower/violin/57.wav",
+      "originalPath": "audio/violin/57.wav",
+      "sha256": "a99df678a68805e1d84f90cb08483850687262ce526a3cb27d58c257426d75b3"
+    },
+    {
+      "instrument": "violin",
+      "midi": 58,
+      "file": "ap-audio/lower/violin/58.wav",
+      "originalPath": "audio/violin/58.wav",
+      "sha256": "4af227d7b39e85d9fa8eea62ca8d7087ef4334620a801ce7d0237b75c34990d8"
+    },
+    {
+      "instrument": "violin",
+      "midi": 59,
+      "file": "ap-audio/lower/violin/59.wav",
+      "originalPath": "audio/violin/59.wav",
+      "sha256": "601e28dbcbd1ee4d82491e8bee2a82085dafc440fde5d04a5aff0be95fc766dc"
+    }
+  ]
+}

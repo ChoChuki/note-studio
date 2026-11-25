@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const NS='http://www.w3.org/2000/svg';
 // Keep v1 storage keys to preserve the existing collection of practice records.
 const SETTINGS_KEY='note-studio-settings-v1',HISTORY_KEY='note-studio-history-v1',LANGUAGE_KEY='note-studio-language-v2';
-const defaults={clef:'both',keys:'two',range:'basic',instrument:'piano',accidentals:false};
+const defaults={clef:'both',keys:'two',range:'basic',instrument:'piano',accidentals:false,soundEnabled:true};
 function loadJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback;}catch(e){return fallback;}}
 let settings={...defaults,...loadJSON(SETTINGS_KEY,{})};
 let history=loadJSON(HISTORY_KEY,[]);
@@ -56,6 +56,14 @@ function applySettings(){
     for(const button of box.querySelectorAll('button'))button.setAttribute('aria-pressed',String(settings[box.dataset.setting]===button.dataset.value));
   }
   $('accidentals').checked=!!settings.accidentals;
+  $('sound-enabled').checked=!!settings.soundEnabled;
+  $('instrument-field').disabled=!settings.soundEnabled;
+  refreshSoundControls();
+}
+function refreshSoundControls(){
+  $('play-row').hidden=!settings.soundEnabled;
+  $('reveal-label').textContent=t(settings.soundEnabled?'reveal':'revealSilent');
+  $('silent-tip').textContent=t(settings.soundEnabled?'silentTip':'soundOffTip');
 }
 function summarizeWeak(){
   const subset=history.slice(-100),freq={};
@@ -111,6 +119,7 @@ function changeLanguage(lang){
   $('language').value=language;
   $('sidebar').setAttribute('aria-label',t('sidebarAria'));
   for(const node of document.querySelectorAll('[data-i18n]'))node.textContent=t(node.dataset.i18n);
+  refreshSoundControls();
   refreshQuestionLabels();
   updateStats();
 }
@@ -141,19 +150,19 @@ function renderAudioState(){
   else if(audioState.state==='playing' && audioState.info){
     const info=audioState.info;
     const instrument=t(info.instrument==='violin'?'violin':'piano');
-    const source=t(info.source==='recording'?'recording':info.source==='soundfont'?'soundfont':'synth');
+    const source=t(info.source==='recording'?'recording':'acousticSample');
     status.textContent=`${instrument} · ${source}${info.changed?t('lowViolin'):''}`;
   }
 }
 async function listen(){
-  if(!revealed)return;
+  if(!revealed||!settings.soundEnabled)return;
   const token=question;
   audioState={state:'loading',info:null};renderAudioState();
   try{
     const info=await ScoreAudio.play(settings.instrument,question.midi);
-    if(token!==question||!info)return;
+    if(token!==question||!settings.soundEnabled||!info)return;
     audioState={state:'playing',info};renderAudioState();
-  }catch(e){if(token===question){audioState={state:'failed',info:null};renderAudioState();}}
+  }catch(e){if(token===question&&settings.soundEnabled){audioState={state:'failed',info:null};renderAudioState();}}
 }
 function reveal(){
   if(revealed)return;
@@ -166,7 +175,7 @@ function reveal(){
   $('judgment').hidden=false;
   $('next').hidden=false;
   refreshQuestionLabels();
-  listen();
+  if(settings.soundEnabled)listen();
 }
 function mark(correct){
   if(!revealed||judged)return;
@@ -187,7 +196,12 @@ document.querySelectorAll('[data-setting] button').forEach(button=>button.addEve
   settings[setting]=button.dataset.value;
   applySettings();save(SETTINGS_KEY,settings);
   if(setting!=='instrument')chooseQuestion();
+  else {ScoreAudio.stop();audioState={state:'none',info:null};renderAudioState();}
 }));
+$('sound-enabled').addEventListener('change',e=>{
+  settings.soundEnabled=e.target.checked;ScoreAudio.stop();audioState={state:'none',info:null};
+  applySettings();renderAudioState();save(SETTINGS_KEY,settings);
+});
 $('language').addEventListener('change',e=>changeLanguage(e.target.value));
 $('accidentals').addEventListener('change',e=>{
   settings.accidentals=e.target.checked;save(SETTINGS_KEY,settings);chooseQuestion();
@@ -198,7 +212,7 @@ $('correct').addEventListener('click',()=>mark(true));
 $('wrong').addEventListener('click',()=>mark(false));
 $('next').addEventListener('click',chooseQuestion);
 $('export').addEventListener('click',()=>{
-  const file=new Blob([JSON.stringify({app:'Note Studio',version:2,exportedAt:new Date().toISOString(),language,settings,history},null,2)],{type:'application/json'});
+  const file=new Blob([JSON.stringify({app:'Note Studio',version:2.1,exportedAt:new Date().toISOString(),language,settings,history},null,2)],{type:'application/json'});
   const link=document.createElement('a');link.href=URL.createObjectURL(file);link.download='note-studio-history.json';
   link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);
 });

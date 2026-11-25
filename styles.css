@@ -31,3 +31,5 @@
  .segmented button{font-size:11px;padding:8px 2px}
 }
 @media(max-width:400px){.site-header .brand h1{line-height:1.15}.site-header .brand h1 .brand-lead{font-size:17px}}
+
+.play-row[hidden]{display:none!important}.sound-toggle{margin-bottom:16px;padding-bottom:5px}.field:disabled{opacity:.55}.switch input:focus-visible+.switch-track{outline:3px solid #80aca4;outline-offset:3px}

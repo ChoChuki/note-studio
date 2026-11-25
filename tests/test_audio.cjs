@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const dir=path.resolve(__dirname,'../ap-audio');let started=0,stopped=0,decodeHold=null,fail=false;
+global.window=global;
+class AudioContext {resume(){return Promise.resolve()} decodeAudioData(b){assert(b.byteLength>1000);return decodeHold||Promise.resolve({})}createBufferSource(){return {connect(){},disconnect(){},start(){started++},stop(){stopped++}}}createGain(){return {gain:{value:0},connect(){},disconnect(){}}}}
+global.AudioContext=AudioContext;global.fetch=async url=>{if(fail)throw Error('failed');let b=fs.readFileSync(path.join(dir,url.replace('./ap-audio/','')));return {ok:true,json:async()=>JSON.parse(b),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)}};
+require('../audio.js');
+(async()=>{let count=0;for(const [instrument,lo] of [['piano',36],['violin',55]])for(let midi=lo;midi<=95;midi++){const r=await ScoreAudio.play(instrument,midi);assert.equal(r.instrument,instrument);assert.equal(r.source,midi>=60?'recording':'sample');count++}assert.equal(count,101);const low=await ScoreAudio.play('violin',43);assert.equal(low.instrument,'piano');assert(low.changed);ScoreAudio.stop();
+// fresh module/cache, interrupted decode must not play
+ delete require.cache[require.resolve('../audio.js')];require('../audio.js');let release;decodeHold=new Promise(r=>release=r);let before=started;let pending=ScoreAudio.play('piano',36);await new Promise(r=>setImmediate(r));ScoreAudio.stop();release({});assert.equal(await pending,null);assert.equal(started,before);decodeHold=null;fail=true;await assert.rejects(ScoreAudio.play('piano',37));assert.equal(started,before);console.log('PASS: 101 audio paths, low-note policy, cancellation and failure without synthesis (mock AudioContext)');})().catch(e=>{console.error(e);process.exit(1)});

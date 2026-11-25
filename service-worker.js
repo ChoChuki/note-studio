@@ -1,9 +1,10 @@
-const CACHE='note-studio-v2.0.0';
+const CACHE='note-studio-v2.1.0';
 const ASSETS=[
  './','./index.html','./styles.css','./app.js','./i18n.js','./music-core.js','./symbol-paths.js','./audio.js',
  './manifest.webmanifest','./icon-192.png','./icon-512.png',
- './vendor/WebAudioFontPlayer.js','./vendor/0000_JCLive_sf2_file.js','./vendor/0400_JCLive_sf2_file.js',
  './ap-audio/sources.json',
+ ...Array.from({length:24},(_,i)=>`./ap-audio/lower/piano/${i+36}.wav`),
+ ...Array.from({length:5},(_,i)=>`./ap-audio/lower/violin/${i+55}.wav`),
  './ap-audio/piano-4.bin','./ap-audio/piano-5.bin','./ap-audio/piano-6.bin',
  './ap-audio/violin-4.bin','./ap-audio/violin-5.bin','./ap-audio/violin-6.bin'
 ];

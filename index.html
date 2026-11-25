@@ -14,9 +14,6 @@
   <script defer src="./music-core.js"></script>
   <script defer src="./symbol-paths.js"></script>
   <script defer src="./i18n.js"></script>
-  <script defer src="./vendor/WebAudioFontPlayer.js"></script>
-  <script defer src="./vendor/0000_JCLive_sf2_file.js"></script>
-  <script defer src="./vendor/0400_JCLive_sf2_file.js"></script>
   <script defer src="./audio.js"></script>
   <script defer src="./app.js"></script>
 </head>
@@ -57,25 +54,26 @@
             <div class="answer-top"><div><div class="answer-overline" data-i18n="answerOverline">音名 · ANSWER</div><div class="answer-main" id="answer-name">F♯4</div></div><div class="answer-letter" id="answer-letter">音级 F</div></div>
             <div class="localized-note" id="localized-note" hidden></div>
             <p class="answer-explain" id="answer-explain"></p>
-            <div class="play-row"><button type="button" id="replay" class="small-action"><span aria-hidden="true">♫</span> <span data-i18n="replay">再听一次</span></button><span id="audio-status" role="status"></span></div>
+            <div class="play-row" id="play-row"><button type="button" id="replay" class="small-action"><span aria-hidden="true">♫</span> <span data-i18n="replay">再听一次</span></button><span id="audio-status" role="status"></span></div>
           </div>
         </div>
         <div class="action-area">
-          <button type="button" id="reveal" class="primary-action"><span class="action-icon">◎</span> <span data-i18n="reveal">显示答案并播放</span> <span class="action-kbd">SPACE</span></button>
+          <button type="button" id="reveal" class="primary-action"><span class="action-icon">◎</span> <span id="reveal-label">显示答案并播放</span> <span class="action-kbd">SPACE</span></button>
           <div id="judgment" class="judgment" hidden>
             <div class="judgment-title"><span data-i18n="judgmentTitle">刚才想对了吗？</span><span data-i18n="judgmentHelp">自己判断，不强制输入答案</span></div>
             <div class="judgment-buttons"><button type="button" id="correct" class="mark-button correct"><span>✓</span> <span data-i18n="correct">想对了</span> <kbd>1</kbd></button><button type="button" id="wrong" class="mark-button wrong"><span>×</span> <span data-i18n="wrong">没想起来</span> <kbd>2</kbd></button></div>
           </div>
           <button type="button" id="next" class="next-action" hidden><span data-i18n="next">下一题</span> <span aria-hidden="true">→</span> <kbd>ENTER</kbd></button>
         </div>
-        <p class="below-help"><span data-i18n="silentTip">音符先静默呈现；只有揭晓后才播放声音。</span><span class="desktop-tip" data-i18n="shortcuts"> 快捷键：空格揭晓 · 1 对 · 2 错 · Enter 下一题 · P 重播</span></p>
+        <p class="below-help"><span id="silent-tip">音符先静默呈现；只有揭晓后才播放声音。</span><span class="desktop-tip" data-i18n="shortcuts"> 快捷键：空格揭晓 · 1 对 · 2 错 · Enter 下一题 · P 重播</span></p>
       </section>
       <aside class="sidebar" id="sidebar" aria-label="练习设置与统计">
         <section class="side-panel settings-panel"><div class="panel-heading"><div><span class="section-kicker" data-i18n="settingsKicker">练习控制</span><h3 data-i18n="settingsTitle">练习设置</h3></div><span class="decorative-star" aria-hidden="true">✳</span></div>
           <fieldset class="field"><legend><strong data-i18n="clefSetting">谱号</strong> <span>CLEF</span></legend><div class="segmented three" data-setting="clef"><button type="button" data-value="both" data-i18n="both" aria-pressed="true">混合</button><button type="button" data-value="treble"><span data-i18n="trebleShort">高音</span> 𝄞</button><button type="button" data-value="bass"><span data-i18n="bassShort">低音</span> 𝄢</button></div></fieldset>
           <fieldset class="field"><legend><strong data-i18n="keySetting">调号范围</strong> <span>KEY SIGNATURE</span></legend><div class="segmented four" data-setting="keys"><button type="button" data-value="none" data-i18n="none">无</button><button type="button" data-value="two">0–2</button><button type="button" data-value="four">0–4</button><button type="button" data-value="all">0–7</button></div></fieldset>
           <fieldset class="field"><legend><strong data-i18n="rangeSetting">音域</strong> <span>REGISTER</span></legend><div class="segmented two" data-setting="range"><button type="button" data-value="basic" data-i18n="basic">常用音域</button><button type="button" data-value="wide" data-i18n="wide">扩展加线</button></div></fieldset>
-          <fieldset class="field"><legend><strong data-i18n="instrumentSetting">声音</strong> <span>INSTRUMENT</span></legend><div class="segmented three" data-setting="instrument"><button type="button" data-value="violin" data-i18n="violin">小提琴</button><button type="button" data-value="piano" data-i18n="piano">钢琴</button><button type="button" data-value="random" data-i18n="random">随机</button></div></fieldset>
+          <label class="toggle-field sound-toggle"><span><strong data-i18n="soundEnabled">播放声音</strong><small data-i18n="soundHelp">揭晓时播放音符；关闭后纯识谱</small></span><span class="switch"><input id="sound-enabled" type="checkbox" checked><span class="switch-track"></span></span></label>
+          <fieldset class="field" id="instrument-field"><legend><strong data-i18n="instrumentSetting">声音</strong> <span>INSTRUMENT</span></legend><div class="segmented three" data-setting="instrument"><button type="button" data-value="violin" data-i18n="violin">小提琴</button><button type="button" data-value="piano" data-i18n="piano">钢琴</button><button type="button" data-value="random" data-i18n="random">随机</button></div></fieldset>
           <label class="toggle-field"><span><strong data-i18n="accidentalsLabel">临时升降还原记号</strong><small data-i18n="accidentalsHelp">在调号之外加入 ♯、♭、♮</small></span><span class="switch"><input id="accidentals" type="checkbox"><span class="switch-track"></span></span></label>
         </section>
         <section class="side-panel stats-panel"><div class="panel-heading"><div><span class="section-kicker" data-i18n="progressKicker">学习进度</span><h3 data-i18n="statsTitle">练习记录</h3></div><span class="stats-icon" aria-hidden="true">↗</span></div>
@@ -86,7 +84,7 @@
         <details class="help-details"><summary><span data-i18n="helpTitle">怎么看这类题？</span> <span class="help-plus">＋</span></summary><div class="help-body"><span data-i18n="helpBody">高音谱号最下面的线是 E4；低音谱号最下面的线是 G2。依次沿“线—间—线”向上数 A–G。调号会改变对应音级；临时记号优先于调号。答案同时显示字母、升降号和八度。</span><p data-i18n="helpExample">例如：高音谱号第二线为 G4；若调号含 G♯，则发声为 G♯4。标准音高 A4 = 440 Hz。</p><p data-i18n="helpNaming">主答案统一使用国际字母音名 A–G；下方另显示当前语言的常用音名（德语采用 H / B 命名）。</p></div></details>
       </aside>
     </main>
-    <footer class="app-footer"><span>NOTE STUDIO / 02</span><span data-i18n="footer">适合手机 · 可离线练习 · 进度保存在本机</span></footer>
+    <footer class="app-footer"><span>NOTE STUDIO / 2.1</span><span data-i18n="footer">适合手机 · 可离线练习 · 进度保存在本机</span></footer>
   </div>
 </body>
 </html>

@@ -75,6 +75,66 @@ el:{
  audioPreparing:'Φόρτωση ήχου…',audioError:'Αποτυχία αναπαραγωγής. Έλεγξε τις ρυθμίσεις ήχου.',storageError:'Δεν είναι διαθέσιμη η τοπική αποθήκευση',recording:'ηχογράφηση',soundfont:'δείγμα ήχου',synth:'συνθετικός ήχος',lowViolin:' (κάτω από την έκταση του βιολιού· χρήση πιάνου)',resetConfirm:'Να διαγραφούν όλα τα τοπικά στατιστικά; Δεν είναι δυνατή η αναίρεση. Κάνε εξαγωγή πρώτα αν χρειάζεται.',sidebarAria:'Ρυθμίσεις και στατιστικά'
 }
 };
+
+const SOUND_COPY={
+  "zh-CN": {
+    "soundEnabled": "播放声音",
+    "soundHelp": "揭晓时自动播放；关闭后纯识谱",
+    "revealSilent": "显示答案",
+    "soundOffTip": "声音已关闭：仅进行识谱练习。",
+    "acousticSample": "原声乐器采样"
+  },
+  "zh-TW": {
+    "soundEnabled": "播放聲音",
+    "soundHelp": "揭曉時自動播放；關閉後純識譜",
+    "revealSilent": "顯示答案",
+    "soundOffTip": "聲音已關閉：僅進行識譜練習。",
+    "acousticSample": "原聲樂器取樣"
+  },
+  "en": {
+    "soundEnabled": "Play sound",
+    "soundHelp": "Play on reveal; turn off for silent reading",
+    "revealSilent": "Reveal answer",
+    "soundOffTip": "Sound is off: notation practice only.",
+    "acousticSample": "Acoustic instrument sample"
+  },
+  "de": {
+    "soundEnabled": "Ton abspielen",
+    "soundHelp": "Ton beim Aufdecken; ohne Ton nur Notenlesen",
+    "revealSilent": "Antwort anzeigen",
+    "soundOffTip": "Ton aus: nur Notenlesen.",
+    "acousticSample": "Akustische Instrumentenaufnahme (Sample)"
+  },
+  "it": {
+    "soundEnabled": "Riproduci audio",
+    "soundHelp": "Riproduci alla risposta; disattiva per leggere in silenzio",
+    "revealSilent": "Mostra risposta",
+    "soundOffTip": "Audio disattivato: solo lettura delle note.",
+    "acousticSample": "Campione di strumento acustico"
+  },
+  "fr": {
+    "soundEnabled": "Jouer le son",
+    "soundHelp": "Son à la révélation ; désactiver pour lire en silence",
+    "revealSilent": "Afficher la réponse",
+    "soundOffTip": "Son désactivé : lecture seule.",
+    "acousticSample": "Échantillon d’instrument acoustique"
+  },
+  "ja": {
+    "soundEnabled": "音を再生する",
+    "soundHelp": "答えの表示時に再生。オフで読譜のみ",
+    "revealSilent": "答えを表示",
+    "soundOffTip": "音声オフ：読譜練習のみ。",
+    "acousticSample": "アコースティック楽器のサンプル"
+  },
+  "el": {
+    "soundEnabled": "Αναπαραγωγή ήχου",
+    "soundHelp": "Ήχος με την απάντηση· απενεργοποίηση για σιωπηλή ανάγνωση",
+    "revealSilent": "Εμφάνιση απάντησης",
+    "soundOffTip": "Ήχος ανενεργός: μόνο ανάγνωση νοτών.",
+    "acousticSample": "Δείγμα ακουστικού οργάνου"
+  }
+};
+for(const [locale,copy] of Object.entries(SOUND_COPY))Object.assign(DICT[locale],copy);
 const LANGUAGES=Object.keys(DICT);
 const SOLFEGE={C:0,D:1,E:2,F:3,G:4,A:5,B:6};
 const SOLFEGE_NAMES={
